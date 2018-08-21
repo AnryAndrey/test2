@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import static org.junit.Assert.*;
 
@@ -45,6 +46,36 @@ public class MethodsTest {
         String expectedResult = "0";
         String actualValue = methods.firstElement(list);
         assertEquals(expectedResult, actualValue);
+    }
+
+    @Test
+    public void lastElemNotNull(){
+        List<String> list = Arrays.asList("a1", "a2", "a3", "a4");
+        String expectedResult = "a4";
+        String actualValue = methods.firstElement(list);
+        assertEquals(expectedResult, actualValue);
+    }
+
+    @Test
+    public void lastElemNull(){
+        List<String> list = new ArrayList<>();
+        String expectedResult = "Empty";
+        String actualValue = methods.lastElement(list);
+        assertEquals(expectedResult, actualValue);
+    }
+
+    @Test
+    public void thirdElementNotNull(){
+        List<String> list = Arrays.asList("a1", "a2", "a3", "a4");
+        String expectedResult = "a3";
+        String actualValue = methods.thirdElement(list);
+        assertEquals(expectedResult, actualValue);
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void thirdElementNull(){
+        List<String> list = Arrays.asList("a1", "a2");
+        String actualValue = methods.thirdElement(list);
     }
 
 }
