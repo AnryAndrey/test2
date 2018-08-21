@@ -7,6 +7,7 @@ import java.util.List;
  */
 public class Methods {
 
+    //
     public int countA1(List<String> list){
         int count = 0;
         for (int i = 0; i <list.size() ; i++) {
@@ -17,20 +18,17 @@ public class Methods {
         }
         return  count;
     }
+
+    public String firstElement(List<String> list){
+        String result = "0";
+
+        for (int i = 0; i < list.size() ; i++) {
+            String value = list.get(i);
+            if ( value != null) {
+                result = value;
+            }
+        }
+        return result;
+    }
 }
 
-//
-//public class Methods {
-//
-//    //  Вернуть количество вхождений объекта «a1»
-//    public int countA1(List<String> list) {
-//        int count = 0;
-//        for (int i = 0; i < list.size(); i++) {
-//            String value = list.get(i);
-//            if ("a1".equals(value)) {
-//                count++;
-//            }
-//        }
-//        return count;
-//    }
-//}

@@ -28,4 +28,23 @@ public class MethodsTest {
 
         assertEquals(expectedCount, actualCount);
     }
+
+
+    @Test
+    public void firstElement(){
+        List<String> list = Arrays.asList("a1", "a2", "a3", "a1");
+        String expectedResult = "a1";
+        String actualValue = methods.firstElement(list);
+        assertEquals(expectedResult, actualValue);
+
+    }
+
+    @Test
+    public void firstElement2(){
+        List<String> list = new ArrayList<>();
+        String expectedResult = "0";
+        String actualValue = methods.firstElement(list);
+        assertEquals(expectedResult, actualValue);
+    }
+
 }
